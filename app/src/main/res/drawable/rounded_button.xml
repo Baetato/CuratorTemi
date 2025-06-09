@@ -1,0 +1,4 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <solid android:color="#EBDDCD" />
+    <corners android:radius="80dp" /> <!-- 원하는 라운드 값 -->
+</shape>

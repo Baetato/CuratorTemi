@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/moving_bg" />
+
+    <TextView
+        android:id="@+id/tv_moving_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="봉인된 비밀 유물로 이동하는 중입니다 ..."
+        android:textSize="50sp"
+        android:textColor="@android:color/black"
+        android:background="@drawable/rounded_white_background"
+        android:padding="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"/>
+</RelativeLayout>

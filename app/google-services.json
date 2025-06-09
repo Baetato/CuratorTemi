@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "64143638522",
+    "project_id": "curator-temi-0609",
+    "storage_bucket": "curator-temi-0609.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64143638522:android:abb80f2ca7f41e8e342e43",
+        "android_client_info": {
+          "package_name": "com.example.curator_temi_test"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzNyagwxni1935DABoWVvI_pdM4op8C_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

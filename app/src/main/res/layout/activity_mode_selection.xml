@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_img"
+    android:padding="32dp">
+
+    <!-- 타이틀 -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="관람 모드를 선택해주세요"
+        android:textSize="50px"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-5dp" />
+
+    <!-- 서브 텍스트 -->
+    <TextView
+        android:id="@+id/subText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안녕하세요 전시 탐험가 여러분, 왕실의 비밀을 밝혀내기 위해 함께 이동할 방법을 택해주세요."
+        android:textSize="24px"
+        android:textColor="#CCCCCC"
+        android:layout_below="@id/titleText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <!-- 버튼 두 개 나란히 배치 -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subText"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_centerHorizontal="true">
+
+        <ImageButton
+            android:id="@+id/temi_first"
+            android:layout_width="605px"
+            android:layout_height="605px"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/temi_first"
+            android:gravity="center"
+            android:padding="24dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/me_first"
+            android:layout_width="605px"
+            android:layout_height="605px"
+            android:background="@drawable/me_first"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:padding="24dp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.curator_temi_test">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Curator_Temi_test">
+
+        <!-- 앱 시작 화면 -->
+        <activity
+            android:name=".KingsSecretsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 모드 선택 화면 -->
+        <activity
+            android:name=".ModeSelectionActivity"
+            android:exported="true" />
+
+        <!-- 탐험 시작 화면 -->
+        <activity
+            android:name=".SecretsExplorerActivity"
+            android:exported="true" />
+
+        <!-- 퀴즈 화면 -->
+        <activity
+            android:name=".QuizActivity"
+            android:exported="true" />
+        <activity android:name=".Quiz2Activity" />
+
+        <activity android:name=".ActivityArtifactInfo" />
+
+        <!-- 유물 이동 화면 -->
+        <activity
+            android:name=".ActivityMoving"
+            android:exported="false" />
+
+        <!-- 메인 메뉴 (예비 기능용) -->
+        <!--
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        -->
+
+    </application>
+</manifest>
