@@ -26,6 +26,9 @@ public class ActivityArtifactInfo extends AppCompatActivity {
 
         // 1) Intent 로부터 유물 이름 가져오기
         String artifactName = getIntent().getStringExtra("artifact_name");
+        if (artifactName == null) artifactName = "사도세자_귀주";
+        // getArtifactDescription 함수 사용안함 주석처리
+        // String desc = getArtifactDescription(name);
 
         // 2) 화면 요소 바인딩 (새 UI에 맞춘 ID)
         TextView    tvTitle       = findViewById(R.id.tv_secret_title);
@@ -37,8 +40,7 @@ public class ActivityArtifactInfo extends AppCompatActivity {
 
         // 3) Temi & Firebase 초기화
         robot            = Robot.getInstance();
-        curatorCountRef  = FirebaseDatabase.getInstance()
-                .getReference("curatorCount");
+        curatorCountRef  = FirebaseDatabase.getInstance().getReference("curatorCount");
 
         // 4) 유물별 리소스 매핑
         int    imgRes;
@@ -86,14 +88,14 @@ public class ActivityArtifactInfo extends AppCompatActivity {
         tvDescription.setText(descText);
 
         // 6) 자동 TTS 재생 (도착 즉시)
-        robot.speak(TtsRequest.create(descText, false));
+        robot.speak(TtsRequest.create(descText, false)); // 자동재생
 
-        // 7) “다시 듣기” 버튼 → curatorCount 0→1 전송 & TTS
+        // 7) “설명 듣기” 버튼 → curatorCount 0→1 전송 & TTS
         btnExplain.setOnClickListener(v -> {
             // 설명 시작 플래그
             curatorCountRef.setValue(0);
             // TTS 재생
-            robot.speak(TtsRequest.create(descText, true));
+            robot.speak(TtsRequest.create("작품 설명을 시작합니다" + descText, true));
             // 설명 완료 플래그
             curatorCountRef.setValue(1);
         });
@@ -150,7 +152,7 @@ public class ActivityArtifactInfo extends AppCompatActivity {
 //                    "진실은 봉인됐지만... 그 단서를 모험가 당신이 풀 수 있다면,\n" +
 //                    "다음 비밀에 도달할 수 있답니다.", true));
 //            ref.setValue(1);
-//        //
+        //
 //
 ////        robot = Robot.getInstance();
 ////        artifactName = getIntent().getStringExtra("artifact_name");
