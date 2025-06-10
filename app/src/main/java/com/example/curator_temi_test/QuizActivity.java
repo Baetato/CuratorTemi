@@ -20,7 +20,7 @@ import com.robotemi.sdk.TtsRequest;
 
 public class QuizActivity extends AppCompatActivity {
 
-    private final int correctAnswerIndex = 3; // 두 번째 버튼이 정답
+    private final int correctAnswerIndex = 3; // 첫 번째 버튼이 정답
     private ImageButton[] buttons;
     private RelativeLayout rootLayout;
     private ImageView resultImage;

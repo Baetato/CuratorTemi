@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 배경: 이동 중 화면 그대로 사용 -->
+    <!-- 1) 배경 이미지 -->
     <ImageView
         android:id="@+id/bg_moving"
         android:layout_width="0dp"
@@ -17,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- 반투명 오버레이 -->
+    <!-- 2) 반투명 오버레이 -->
     <View
         android:id="@+id/overlay"
         android:layout_width="0dp"
@@ -28,47 +29,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- 상단 중앙: 비밀 번호 + 제목 -->
+    <!-- 3) 상단 제목 -->
     <TextView
         android:id="@+id/tv_secret_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="[비밀 1] 조선의 비극 : 사도세자의 뒤주"
+        android:layout_marginTop="32dp"
+        android:text="[ 스페셜 퀴즈 ] : 나를 찾아줘"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="32dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- 왼쪽: 유물 이미지 -->
+    <!-- 4a) 왼쪽: 유물 이미지 -->
     <ImageView
         android:id="@+id/iv_artifact"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
-        android:background="@drawable/rounded_white_background"
+        android:layout_marginStart="24dp"
         android:padding="16dp"
+        android:background="@drawable/rounded_white_background"
         android:scaleType="fitCenter"
         app:layout_constraintTop_toBottomOf="@id/tv_secret_title"
-        app:layout_constraintBottom_toTopOf="@id/btn_next"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonExplain"
         app:layout_constraintWidth_percent="0.45"
         app:layout_constraintDimensionRatio="1:1"/>
 
-    <!-- 오른쪽: 설명 텍스트 -->
+    <!-- 4b) 오른쪽: 설명 텍스트 스크롤 -->
     <ScrollView
         android:id="@+id/scroll_desc"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintTop_toBottomOf="@id/tv_secret_title"
-        app:layout_constraintBottom_toTopOf="@id/btn_next"
-        app:layout_constraintStart_toEndOf="@id/iv_artifact"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_artifact"
+        app:layout_constraintBottom_toTopOf="@id/buttonExplain"
         app:layout_constraintWidth_percent="0.45">
 
         <TextView
@@ -80,62 +80,30 @@
             android:lineSpacingExtra="4dp"/>
     </ScrollView>
 
-    <!-- 우측 하단: 다음 화살표 버튼 -->
-    <ImageButton
-        android:id="@+id/btn_next"
+    <!-- 5) 설명 다시 듣기 버튼 -->
+    <Button
+        android:id="@+id/buttonExplain"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="23dp"
-        android:background="@drawable/rounded_button"
-        android:contentDescription="다음 비밀에 도달하기 위해 단서 풀기"
-        app:layout_constraintWidth_percent="0.6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <!-- (자동 TTS 전용) 유물 제목/본문 뷰는 숨기거나 재구성해 주세요 -->
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:layout_marginTop="16dp"
+        android:text="설명 다시 듣기"
         app:layout_constraintTop_toBottomOf="@id/iv_artifact"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/tv_body"
+    <!-- 6) 단서 퀴즈 풀기 버튼 -->
+    <Button
+        android:id="@+id/btnNext"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- 다시 듣기 버튼 -->
-    <Button
-        android:id="@+id/buttonExplain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="설명 듣기"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toTopOf="@id/btn_next"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- 뒤로가기 버튼 -->
-    <Button
-        android:id="@+id/buttonBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="뒤로 가기"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
+        android:text="유물에 대한 단서 퀴즈 풀기"
         app:layout_constraintTop_toBottomOf="@id/buttonExplain"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <!--0609 테스트 코드-->
 <!--<?xml version="1.0" encoding="utf-8"?>-->

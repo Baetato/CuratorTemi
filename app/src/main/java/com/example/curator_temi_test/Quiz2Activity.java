@@ -1,5 +1,6 @@
 package com.example.curator_temi_test;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import com.robotemi.sdk.TtsRequest;
 
 public class Quiz2Activity extends AppCompatActivity {
 
-    private final int correctAnswerIndex = 2; // 세 번째 버튼이 정답
+    private final int correctAnswerIndex = 2; // 두 번째 버튼이 정답
     private ImageButton[] buttons;
     private RelativeLayout rootLayout;
     private ImageView resultImage;
@@ -39,7 +40,7 @@ public class Quiz2Activity extends AppCompatActivity {
         rootLayout = findViewById(R.id.rootLayout);
 
         // 뒤로가기 버튼 (XML에 buttonBack 있어야 함)
-        findViewById(R.id.buttonBack).setOnClickListener(v -> finish());
+//        findViewById(R.id.buttonBack).setOnClickListener(v -> finish());
 
         // 선택지 ImageButton 배열
         buttons = new ImageButton[]{
@@ -100,8 +101,9 @@ public class Quiz2Activity extends AppCompatActivity {
 
         // 재시도 또는 다음 동작
         if (isCorrect) {
-            // 정답: 더 이상 퀴즈3가 없으면 종료하거나 다른 액티비티로 이동
-            // 예: finish();
+            // 정답 -> 스페셜 퀴즈 (QR찍기 이벤트)
+            // 잠시 대기 후 SpecialQuiz로 이동
+            startActivity(new Intent(this, SpecialQuiz.class));
             finish();
         } else {
             // 오답: 재시도 버튼 생성

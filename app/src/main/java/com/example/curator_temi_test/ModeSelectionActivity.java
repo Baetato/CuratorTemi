@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.robotemi.sdk.Robot;
+
 public class ModeSelectionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,9 +18,8 @@ public class ModeSelectionActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // 자기주도 모드 → KingsSecretsActivity로 이동
         findViewById(R.id.me_first).setOnClickListener(v -> {
-            Intent intent = new Intent(this, KingsSecretsActivity.class);
+            Intent intent = new Intent(this, SecretsExplorerActivity2.class);
             startActivity(intent);
         });
     }

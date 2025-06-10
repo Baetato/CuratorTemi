@@ -1,0 +1,68 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_img">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:paddingBottom="90dp">
+
+        <android.widget.Button
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/rounded_button"
+            android:padding="10dp"
+            android:text="뒤로가기"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="테미의 설명이 필요하십니까?"
+            android:textSize="80sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="240dp" />
+
+        <LinearLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/questionText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp">
+
+            <android.widget.Button
+                android:id="@+id/buttonYes"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
+                android:text="예"
+                android:textSize="30sp"
+                android:textColor="#000000"
+                android:background="@drawable/rounded_button"
+                android:layout_marginEnd="100dp"
+                android:stateListAnimator="@null" />
+
+            <android.widget.Button
+                android:id="@+id/buttonNo"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
+                android:text="아니오"
+                android:textSize="30sp"
+                android:textColor="#000000"
+                android:background="@drawable/rounded_button"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

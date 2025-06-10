@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/map">
+
+    <!-- 비밀1 버튼 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/secret1"
+        android:layout_width="155px"
+        android:layout_height="49px"
+        android:layout_marginStart="620px"
+        android:layout_marginTop="261px"
+        android:layout_alignParentTop="true"
+        android:padding="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:insetLeft="0dp"
+        android:insetRight="0dp"
+        android:gravity="center"
+        android:text="비밀1"
+        android:textColor="#FFFFFF"
+        android:textSize="32px"
+        android:lineHeight="32px"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        app:backgroundTint="@null"
+        app:cornerRadius="4dp"
+        android:background="@drawable/btn_background_selector" />
+
+    <!-- 비밀2 버튼 -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/secret2"
+        android:layout_width="155px"
+        android:layout_height="49px"
+        android:layout_marginStart="20px"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@id/secret1"
+        android:layout_marginTop="261px"
+        android:padding="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:insetLeft="0dp"
+        android:insetRight="0dp"
+        android:gravity="center"
+        android:text="비밀2"
+        android:textColor="#FFFFFF"
+        android:textSize="32px"
+        android:lineHeight="32px"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        app:backgroundTint="@null"
+        app:cornerRadius="4dp"
+        android:background="@drawable/btn_background_selector" />
+</RelativeLayout>

@@ -21,7 +21,7 @@ public class KingsSecretsActivity extends AppCompatActivity {
 
         Button startButton = findViewById(R.id.startAdventureButton);
         startButton.setOnClickListener(v -> {
-            Intent intent = new Intent(KingsSecretsActivity.this, ModeSelectionActivity.class);
+            Intent intent = new Intent(KingsSecretsActivity.this, MapActivity.class);
             startActivity(intent);
         });
     }

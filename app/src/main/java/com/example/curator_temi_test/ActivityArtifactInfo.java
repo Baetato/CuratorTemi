@@ -26,7 +26,8 @@ public class ActivityArtifactInfo extends AppCompatActivity {
 
         // 1) Intent 로부터 유물 이름 가져오기
         String artifactName = getIntent().getStringExtra("artifact_name");
-        if (artifactName == null) artifactName = "사도세자_귀주";
+        // Null 예외처리하면 final 속성 추가해줘야함
+        // if (artifactName == null) artifactName = "사도세자_귀주";
         // getArtifactDescription 함수 사용안함 주석처리
         // String desc = getArtifactDescription(name);
 
@@ -34,9 +35,9 @@ public class ActivityArtifactInfo extends AppCompatActivity {
         TextView    tvTitle       = findViewById(R.id.tv_secret_title);
         ImageView   ivArtifact    = findViewById(R.id.iv_artifact);
         TextView    tvDescription = findViewById(R.id.tv_description);
-        ImageButton btnNext       = findViewById(R.id.btn_next);
+        Button      btnNext       = findViewById(R.id.btnNext);
         Button      btnExplain    = findViewById(R.id.buttonExplain);
-        Button      btnBack       = findViewById(R.id.buttonBack);
+//        Button      btnBack       = findViewById(R.id.buttonBack);
 
         // 3) Temi & Firebase 초기화
         robot            = Robot.getInstance();
@@ -109,7 +110,7 @@ public class ActivityArtifactInfo extends AppCompatActivity {
         });
 
         // 9) 뒤로가기
-        btnBack.setOnClickListener(v -> finish());
+//        btnBack.setOnClickListener(v -> finish());
     }
 }
 
